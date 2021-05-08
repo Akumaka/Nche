@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyUser">
+
+    <RelativeLayout
+        android:id="@+id/my_user_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorUserLoginTitle"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/app_title"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button_add_user"
+            android:layout_below="@id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_my_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_add_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/user_login_button_bg"
+            android:padding="@dimen/_10sdp"
+            android:text="Add New User"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/newUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@color/colorUserLoginButton"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/my_user_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:drawableEnd="@drawable/ic_cancel_black"
+            android:drawableRight="@drawable/ic_cancel_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Id :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Name :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Password :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/tv_complain_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="User Type :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/spinner_complain_type"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@android:color/white"
+                android:entries="@array/complain_type_array"
+                android:spinnerMode="dropdown"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_add_user_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/colorUserLoginEditTextStroke"
+                android:padding="@dimen/_10sdp"
+                android:text="Add"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/updateUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@color/colorUserLoginButton"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/my_user_update_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            app:drawableEndCompat="@drawable/ic_cancel_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Id :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_update_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:editable="false"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Name :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_update_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Password :"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <EditText
+                android:id="@+id/editText_my_user_update_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="@dimen/_16ssp" />
+
+            <Button
+                android:id="@+id/button_add_user_update_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/colorUserLoginEditTextStroke"
+                android:padding="@dimen/_10sdp"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

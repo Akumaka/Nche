@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "8434339464",
+    "firebase_url": "https://nche-44fbf-default-rtdb.firebaseio.com",
+    "project_id": "nche-44fbf",
+    "storage_bucket": "nche-44fbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8434339464:android:1ee0972e71720b8256d93d",
+        "android_client_info": {
+          "package_name": "com.e.nche"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8434339464-f5b08k1nl8rqjnl8u29d7grbidcco1uo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.e.nche",
+            "certificate_hash": "564cdd0ffddfd99d067737dee47853819af5462e"
+          }
+        },
+        {
+          "client_id": "8434339464-7v0ina7qkf6gk1c3mkuo7q9982n4uk6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMBtyUIP1e5yfwI5HIfNT8fmhGoDfovwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8434339464-7v0ina7qkf6gk1c3mkuo7q9982n4uk6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

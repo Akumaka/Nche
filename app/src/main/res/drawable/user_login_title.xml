@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="@dimen/_120sdp" />
+
+    <solid android:color="@color/colorUserLoginTitle" />
+
+    <stroke
+        android:width="@dimen/_4sdp"
+        android:color="@android:color/white" />
+
+    <padding
+        android:bottom="@dimen/_15sdp"
+        android:left="@dimen/_30sdp"
+        android:right="@dimen/_30sdp"
+        android:top="@dimen/_15sdp" />
+
+</shape>

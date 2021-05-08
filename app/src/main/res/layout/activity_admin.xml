@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_login_bg"
+    android:orientation="vertical"
+    tools:context=".Admin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_60sdp">
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/user_login_title"
+                        android:fontFamily="@font/algerian"
+                        android:text="@string/app_title"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_20sdp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginBottom="@dimen/_50sdp"
+                    android:background="@color/colorUserLoginDetails">
+
+                    <TextView
+                        android:id="@+id/login_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Login"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_30ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/login_title"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:layout_marginBottom="@dimen/_30sdp">
+
+                        <TextView
+                            android:id="@+id/textView_admin_login_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/user_login_name"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_admin_user_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_admin_login_user_name"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:maxLength="16"
+                            android:padding="@dimen/_8sdp"
+                            android:singleLine="true"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_login_admin_pwd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_admin_user_name"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/user_login_password"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/editText_user_login_pwd_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_login_admin_pwd"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editText_admin_user_pwd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:inputType="textPassword"
+                                android:maxLength="20"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_16ssp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/button_admin_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_user_login_pwd_layout"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="Login"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_remember"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_admin_login"
+                            android:buttonTint="@color/colorUserLoginEditTextStroke"
+                            android:checked="true"
+                            android:padding="@dimen/_10sdp"
+                            android:text="Remember me"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

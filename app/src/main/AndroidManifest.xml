@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.e.nche">
+
+    <uses-sdk tools:overrideLibrary="com.budiyev.android:code-scanner:2.1.0" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.e.nche.Notification.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_square"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.e.nche.ShowComplain" />
+        <activity android:name="com.e.nche.QrScan" />
+        <activity android:name="com.e.nche.UpdateComplain" />
+        <activity android:name="com.e.nche.MyComplain" />
+        <activity android:name="com.e.nche.MySuperAdmin" />
+        <activity android:name="com.e.nche.MyUser" />
+        <activity android:name="com.e.nche.UpdateVehicleInformation" />
+        <activity android:name="com.e.nche.AdminVehicles" />
+        <activity android:name="com.e.nche.AgentComplain" />
+        <activity android:name="com.e.nche.AgentVehicles" />
+        <activity android:name="com.e.nche.Login" />
+        <activity android:name="com.e.nche.SecurityAgents" />
+        <activity android:name="com.e.nche.ComplainsActivity" />
+        <activity android:name="com.e.nche.SuperAdmin" />
+        <activity android:name="com.e.nche.Admin" />
+        <activity android:name="com.e.nche.PublicWatch" />
+        <activity android:name="com.e.nche.ScanActivity" />
+        <activity android:name="com.e.nche.VehicleInformation" />
+        <activity android:name="com.e.nche.UserLogin" />
+
+        <activity android:name="com.e.nche.MainUserActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.e.nche.Notification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.e.nche.NotificationActivity">
+            <intent-filter>
+                <action android:name="com.e.vicab.notification.push.by.server.target" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

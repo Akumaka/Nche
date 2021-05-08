@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/user_login_bg"
+    tools:context=".ShowComplain">
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:text="Operator\'s Details"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        android:background="@drawable/user_login_button_bg"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_24ssp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_40sdp">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_registration_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/code"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_registration_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/textView_tracking_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_login_tracking_number"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_tracking_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/textView_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Type :"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/textView_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Route :"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/textView_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number Of Operator :"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <TextView
+                android:id="@+id/textView_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address Of Operator :"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <EditText
+                android:id="@+id/editText_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:editable="false"
+                android:background="@drawable/user_login_edittext_bg"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_18ssp" />
+
+            <ImageView
+                android:id="@+id/imageView_driverImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_10sdp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

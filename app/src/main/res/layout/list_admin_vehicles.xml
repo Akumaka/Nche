@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_admin_parent_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/u_user"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="User"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/u_id"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Id"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_type"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Type"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_model"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Model"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_route"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Route"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_operation"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Operation Unit"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_registration"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Registration Number"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_engine"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/_18ssp"
+                android:layout_weight="1"
+                android:text="Vehicle Engine Number"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/v_tracking"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Vehicle Tracking Number"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_name"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Name"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_current"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Current Address"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_nationality"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Nationality"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/o_origin"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Origin"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_govt"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Local Govt Area"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_home"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Home Town"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/o_phone"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Phone Number"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/o_email"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Owner Email"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_name"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Name"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_residence"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Current Address"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_nationality"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Nationality"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_origin"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Origin"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_govt"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Government Area"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_home"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Home Town"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_phone"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Phone Number"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/d_email"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_18ssp"
+                android:text="Driver Email"
+                android:padding="@dimen/_3sdp"
+                android:gravity="left"
+                android:background="@drawable/recycler_view_borders"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_viewImage"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/user_login_title"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                android:layout_gravity="center"
+                android:text="View Image"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>

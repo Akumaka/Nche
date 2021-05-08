@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminVehicles">
+
+    <LinearLayout
+        android:id="@+id/layout_view_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_30sdp"
+        android:background="@drawable/user_login_edittext_bg"
+        android:visibility="gone"
+        android:layout_below="@id/condition"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/image_view_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_cancel_black"
+            android:drawableEnd="@drawable/ic_cancel_black"/>
+
+        <ImageView
+            android:id="@+id/image_view_operator_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/capture_image"
+            android:padding="@dimen/_10sdp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_weight=".4"
+            android:background="@color/colorUserLoginTitle"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_2sdp"
+            android:layout_weight="2.6"
+            android:background="@color/colorUserLoginTitle"
+            android:src="@drawable/vicab_menu" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_bar_bg"
+        android:textSize="@dimen/_16ssp"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@android:color/white"
+        android:textCursorDrawable="@drawable/edittext_cursor"
+        android:drawableRight="@drawable/ic_search"
+        android:layout_below="@id/menu_bar"/>
+
+    <LinearLayout
+        android:id="@+id/condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/search_view">
+
+        <CheckBox
+            android:id="@+id/checkbox_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:textSize="@dimen/_16ssp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:buttonTint="@color/cardview_dark_background"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration Number"
+            android:textSize="@dimen/_16ssp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:buttonTint="@color/cardview_dark_background"
+            android:checked="true"/>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/condition"
+        android:fillViewport="true"
+        android:scrollbars="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/a_u_user"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="User"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_u_id"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Id"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_type"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Type"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_model"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Model"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_route"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Route"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_operation"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Operation Unit"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_registration"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Registration Number"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_engine"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/_18ssp"
+                    android:layout_weight="1"
+                    android:text="Vehicle Engine Number"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_v_tracking"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Vehicle Tracking Number"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_name"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Name"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_current"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Current Address"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_nationality"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Nationality"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/a_o_origin"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner State of Origin"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_govt"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Local Govt Area"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_home"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Home Town"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/a_o_phone"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Phone Number"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_o_email"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Owner Email"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_name"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Name"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_residence"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Residence Address"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_nationality"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Nationality"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_origin"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Origin"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_govt"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Local Govt Area"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_home"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Home Town"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_phone"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Phone Number"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_email"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Email"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/a_d_image"
+                    android:layout_width="@dimen/_140sdp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_18ssp"
+                    android:text="Driver Image"
+                    android:padding="@dimen/_3sdp"
+                    android:gravity="left"
+                    android:layout_gravity="center"
+                    android:background="@drawable/recycler_view_headers_borders"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_security_admin_vehicles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>

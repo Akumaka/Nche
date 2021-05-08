@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Nche</string>
+    <string name="app_title">Nche</string>
+    <string name="vehicle_details">Vehicle Details</string>
+
+    // Drawer Open and close
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    //User Login Activity
+    <string name="user_login_title">Login</string>
+    <string name="user_login_name">User Name:</string>
+    <string name="user_login_password">Password:</string>
+    <string name="user_login_login">Login</string>
+    <string name="user_login_public">Public Watch</string>
+    <string name="user_login_complains">General Complaints</string>
+    <string name="user_login_security">Security Agents Only</string>
+
+    //Vehicle Information Activity
+    //User Vehicle Detail
+    <string name="user_vehicle_title">Vehicle\'s Detail</string>
+    <string name="user_login_type">Type:</string>
+    <string name="user_login_model">Model:</string>
+    <string name="user_login_route">Route:</string>
+    <string name="user_login_operation_unit">Operation Unit:</string>
+    <string name="user_login_registration_number">Registration Number:</string>
+    <string name="user_login_engine_number">Engine Number:</string>
+    <string name="user_login_tracking_number">Tracking Number:</string>
+
+    //Owner Ship Detail
+    <string name="owner_ship_title">Owner\’s Details </string>
+    <string name="owner_ship_name">Name:</string>
+    <string name="owner_ship_address">Address:</string>
+    <string name="owner_ship_current_address">Current Address:</string>
+    <string name="owner_ship_nationality">Nationality:</string>
+    <string name="owner_ship_origin">State of Origin:</string>
+    <string name="owner_ship_govt_area">Local Govt Area:</string>
+    <string name="owner_ship_home_town">Home Town:</string>
+    <string name="owner_ship_phone_number">Phone Number:</string>
+    <string name="owner_ship_email">Email:</string>
+
+    //Operator Detail
+    <string name="driver_title">Operator\’s Details:</string>
+    <string name="driver_name">Full Name of Operator:</string>
+    <string name="driver_residence">Current Address:</string>
+    <string name="driver_nationality">Nationality:</string>
+    <string name="driver_origin">State Of Origin:</string>
+    <string name="driver_Govt_area">Local Govt Area:</string>
+    <string name="driver_home_town">Home Town:</string>
+    <string name="driver_photo">Passport Photograph:</string>
+    <string name="fingure_print">Finger Print</string>
+    <string name="capture">Capture</string>
+    <string name="scan">Scan</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="phone_number_driver">Driver Phone Number:</string>
+    <string name="email_address">Email Address:</string>
+    <string name="email_address_driver">Driver Email Address:</string>
+    <string name="Button_Submit">Submit</string>
+
+    // Public Watch
+    <string name="public_watch">Public Watch</string>
+    <string name="code">Registration Number/Type of Complaint</string>
+    <string name="status">Status :</string>
+    <string name="registration_number">Registration Number</string>
+    <string name="Button">Submit</string>
+    <string name="qrScan">Scan QR Code</string>
+
+    //Complains
+    <string name="complains_four_digit_code">Registration Number/Type of Complaint</string>
+    <string name="complains_model">Model</string>
+    <string name="complains_name">Name</string>
+    <string name="complains_sender_name">Sender\'s Name</string>
+    <string name="complains_email">Email</string>
+    <string name="complains_phone">Phone #</string>
+    <string name="complains_remarks">Remarks</string>
+    <string name="add_pic">Add Pic / Video</string>
+
+    <string name="Subscribe">Subscribe To Notification Topic</string>
+
+    //Type
+    <string-array name="type_array">
+        <item>Select One</item>
+        <item>Bus</item>
+        <item>Car</item>
+        <item>Tricycle</item>
+        <item>Motorbike</item>
+    </string-array>
+
+    <string-array name="complain_type_array">
+        <item>General Complains</item>
+        <item>Human Trafficking Complains</item>
+        <item>Illicit Drugs Complains</item>
+        <item>Natural Disasters Complains</item>
+        <item>Fire Disasters Complains</item>
+        <item>Financial Crimes Complains</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="font_algerian_regular">fonts/AlgerianRegular.ttf</string>
+    <string name="str_report_human_trafficking">Report Human Trafficking</string>
+    <string name="str_report_illicit_drugs_narcotics">Report illicit Drugs/Narcotics</string>
+    <string name="str_report_natural_disasters">Report Natural Disasters</string>
+    <string name="str_report_fire_disasters">Report Fire Disasters</string>
+    <string name="str_report_financial_economic_crimes">Report Financial/Economic Crimes</string>
+    <string name="str_note">Note: You have the  option of providing your contact email and phone number if you wish to be contacted, or use nchedata@gmail.com and omit your phone number if you wish to report anonymously.</string>
+
+</resources>

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_login_bg"
+    tools:context=".SecurityAgents">
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp" />
+
+        <ImageButton
+            android:id="@+id/imageButton_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:background="@color/colorUserLoginTitle"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/vicab_menu" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/menu">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/_60sdp">
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/user_login_title"
+                        android:fontFamily="@font/algerian"
+                        android:text="@string/app_title"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_22ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginRight="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@color/colorUserLoginDetails"
+                    android:paddingBottom="@dimen/_30sdp">
+
+                    <TextView
+                        android:id="@+id/login_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="-2dp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/user_login_security"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_22ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/login_title"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <Button
+                            android:id="@+id/button_security_complains"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="Complains"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <Button
+                            android:id="@+id/button_agent_qrScan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_security_complains"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/qrScan"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textView_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_agent_qrScan"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="@string/code"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_security_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_code"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:maxLength="8"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <Button
+                            android:id="@+id/button_security_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_security_code"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="Search"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_security_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_security_search"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:text="@string/status"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/editText_security_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_security_status"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:editable="false"
+                            android:padding="@dimen/_3sdp"
+                            android:textSize="@dimen/_18ssp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_security_status"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView_registration_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/registration_number"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_registration_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_tracking_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/user_login_tracking_number"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_tracking_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:editable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Vehicle Type :"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:editable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_route"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="Route :"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_route"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:editable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="true"
+                                android:text="Phone Number Of Operator :"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:editable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:singleLine="true"
+                                android:text="Address Of Operator :"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:editable="false"
+                                android:padding="@dimen/_3sdp"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <ImageView
+                                android:id="@+id/imageView_driverImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:padding="@dimen/_10sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_complain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_security_status"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView_unique"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:text="Unique Code"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_unique"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:inputType="number"
+                                android:maxLength="8"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/textView_model"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="@string/complains_model"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_model"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:inputType="text"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/textView_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="@string/complains_sender_name"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:inputType="text"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="@string/complains_email"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:inputType="textEmailAddress"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/textView_phone_com"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="@string/complains_phone"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:inputType="number"
+                                android:padding="@dimen/_3sdp"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_remarks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:text="@string/complains_remarks"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_16ssp"
+                                app:drawableEndCompat="@drawable/asterisk" />
+
+                            <EditText
+                                android:id="@+id/editText_complains_remarks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:lines="3"
+                                android:maxLines="6"
+                                android:padding="@dimen/_3sdp"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <LinearLayout
+                                android:id="@+id/layout_download"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageView_download"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_200sdp"
+                                    android:visibility="gone" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <VideoView
+                                        android:id="@+id/videoView_download"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_300sdp"
+                                        android:visibility="gone" />
+
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/textView_complains_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/editText_complains_remarks"
+                                android:layout_marginTop="@dimen/_20ssp"
+                                android:background="@drawable/user_login_edittext_bg_verified"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@android:color/white"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

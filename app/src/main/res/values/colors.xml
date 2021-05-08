@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#85c226</color>
+    <color name="colorPrimaryDark">#608C1B</color>
+    <color name="colorAccent">#f8c301</color>
+
+    //User login screen
+<!--    <color name="colorUserLoginTitle">#B3DEAE00</color>-->
+<!--    <color name="colorUserLoginDetails">#803082F9</color>-->
+<!--    <color name="colorUserLoginEditTextStroke">#F1C418</color>-->
+<!--    <color name="colorUserLoginButton">#3082F9</color>-->
+
+    <color name="colorUserLoginTitle">#B31F1C17</color>
+    <color name="colorUserLoginDetails">#00F8C301</color>
+    <color name="colorUserLoginEditTextStroke">#1f1c17</color>
+    <color name="colorUserLoginButton">#1f1c17</color>
+
+<!--    <color name="colorUserLoginTitle">#B31F1C17</color>-->
+<!--    <color name="colorUserLoginDetails">#8085c226</color>-->
+<!--    <color name="colorUserLoginEditTextStroke">#1f1c17</color>-->
+<!--    <color name="colorUserLoginButton">#f8c301</color>-->
+
+<!--    <color name="colorUserLoginTitle">#B385c226</color>-->
+<!--    <color name="colorUserLoginDetails">#80f8c301</color>-->
+<!--    <color name="colorUserLoginEditTextStroke">#1f1c17</color>-->
+<!--    <color name="colorUserLoginButton">#1f1c17</color>-->
+
+    <color name="colorOrange">#f8c301</color>
+    <color name="colorGreen">#85c226</color>
+    <color name="colorBlack">#1f1c17</color>
+
+    //verification colors
+    <color name="verified">#00C853</color>
+    <color name="notVerified">#F0D50000</color>
+    <color name="vTextColor">#ffffff</color>
+
+</resources>

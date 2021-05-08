@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_login_bg"
+    tools:context=".UpdateComplain">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/user_login_title"
+                        android:fontFamily="@font/algerian"
+                        android:paddingTop="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_15sdp"
+                        android:text="@string/app_title"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_22ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@color/colorUserLoginDetails">
+
+                    <TextView
+                        android:id="@+id/login_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Update Complain"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_22ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/login_title"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/textView_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_four_digit_code"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_code"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:maxLength="8"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_model"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_code"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_model"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_model"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_model"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_model"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_name"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_name"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_name"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_email"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_email"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_email"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_phone"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_phone"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <TextView
+                            android:id="@+id/textView_remarks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_phone"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/asterisk"
+                            android:drawableRight="@drawable/asterisk"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:text="@string/complains_remarks"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <EditText
+                            android:id="@+id/editText_complains_remarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_remarks"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:padding="@dimen/_3sdp"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_18ssp" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_download"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_complains_remarks"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/imageView_download"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_200sdp"
+                                android:visibility="gone" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <VideoView
+                                    android:id="@+id/videoView_download"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_300sdp"
+                                    android:visibility="gone" />
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView_update_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/layout_download"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_20ssp"
+                            android:visibility="gone" />
+
+
+                        <Button
+                            android:id="@+id/button_complains_submit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_update_status"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="Update"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <Button
+                            android:id="@+id/button_complains_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_complains_submit"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_30sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="Delete"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
