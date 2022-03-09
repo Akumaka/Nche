@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.e.nche.Email.Connection;
+import com.e.nche.Email.GMailSender;
 import com.e.nche.Email.GMailVerify;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -109,7 +110,8 @@ public class ComplainsActivity extends AppCompatActivity {
         }
 
         TextView login_title = findViewById(R.id.login_title);
-        login_title.setText(String.format("Send %s", type));
+        login_title.setText(String.format(!type.equals("General Complaints") ?
+                "Report %s" : "%s", type));
 
         btn_addPic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,7 +273,9 @@ public class ComplainsActivity extends AppCompatActivity {
         note.put("UniqueCode", random);
         note.put("Model", et_model.getText().toString().trim());
         note.put("Name", et_name.getText().toString().trim());
-        note.put("Email", et_email.getText().toString().trim());
+        note.put("Email", et_email.getText().toString().trim() == null
+                || et_email.getText().toString().trim().equals("")
+                ? "nchedata@gmil.com" : et_email.getText().toString().trim());
         note.put("Phone", et_phone.getText().toString().trim());
         note.put("Remarks", et_remarks.getText().toString().trim());
         note.put("Attachment", url);
@@ -290,8 +294,8 @@ public class ComplainsActivity extends AppCompatActivity {
                                 .show();
 
                         emptyFields();
-                        if (!type.equals("General Complain"))
-                            verifyEmail(note);
+//                        if (!type.equals("General Complaints"))
+                        verifyEmail(note);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -322,14 +326,15 @@ public class ComplainsActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    GMailVerify gMailVerify = new GMailVerify("bunubunudata@gmail.com", "Admin123@@");
+//                    GMailVerify gMailVerify = new GMailVerify("bunubunudata@gmail.com", "Admin123@@");
+                    GMailSender gMailVerify = new GMailSender("bunubunudata@gmail.com", "Admin123@@");
 
                     gMailVerify.allMessagesCount();
                     if (type.equals("Financial Crimes Complain"))
                         gMailVerify.sendMail(getResources().getString(R.string.app_name) + type,
                                 body,
                                 "bunubunudata@gmail.com",
-                                "n.almushahid@yahoo.com");
+                                "zurielsoft@gmail.com,bunubunudata@gmail.com,n.almushahid@yahoo.com");
                     else
                         gMailVerify.sendMail(getResources().getString(R.string.app_name) + type,
                                 body,
@@ -388,20 +393,23 @@ public class ComplainsActivity extends AppCompatActivity {
     private boolean notValidateInfo() {
         boolean result = false;
 
-        if (TextUtils.isEmpty(et_code.getText().toString())) {
+        if (TextUtils.isEmpty(et_code.getText().toString()))
             if (type.equals("General Complain")) {
                 result = true;
                 et_code.setError("");
             }
-        }
+
         if (TextUtils.isEmpty(et_remarks.getText().toString())) {
             result = true;
             et_remarks.setError("");
         }
-        if (TextUtils.isEmpty(et_email.getText().toString())) {
-            result = true;
-            et_email.setError("");
-        }
+
+//        if (TextUtils.isEmpty(et_email.getText().toString())) {
+//            result = true;
+//            et_email.setError("Enter Email First");
+//        } else
+//            et_email.setError(null);
+
 
         return result;
     }

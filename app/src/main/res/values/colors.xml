@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#85c226</color>
-    <color name="colorPrimaryDark">#608C1B</color>
+    <color name="colorPrimary">#02b10e</color>
+    <color name="colorPrimaryDark">#007700</color>
     <color name="colorAccent">#f8c301</color>
 
     //User login screen
@@ -12,8 +12,9 @@
 
     <color name="colorUserLoginTitle">#B31F1C17</color>
     <color name="colorUserLoginDetails">#00F8C301</color>
-    <color name="colorUserLoginEditTextStroke">#1f1c17</color>
-    <color name="colorUserLoginButton">#1f1c17</color>
+    <color name="colorUserLoginEditTextStroke">#02b10e</color>
+    <color name="colorUserLoginButton">#02b10e</color>
+    <color name="colorUserTextView">#02b10e</color>
 
 <!--    <color name="colorUserLoginTitle">#B31F1C17</color>-->
 <!--    <color name="colorUserLoginDetails">#8085c226</color>-->

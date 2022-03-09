@@ -1,7 +1,7 @@
 package com.e.nche.SecurityAgentsModel;
 
 public class ComplainModel {
-    private String code, unique, model, name, email, phone, remarks, attachment;
+    private String code, unique, model, name, email, phone, remarks, attachment, TimeStamp;
 
     public ComplainModel() {
     }
@@ -16,7 +16,7 @@ public class ComplainModel {
         this.attachment = attachment;
     }
 
-    public ComplainModel(String code, String unique, String model, String name, String email, String phone, String remarks, String attachment) {
+    public ComplainModel(String code, String unique, String model, String name, String email, String phone, String remarks, String attachment, String TimeStamp) {
         this.code = code;
         this.unique = unique;
         this.model = model;
@@ -25,6 +25,7 @@ public class ComplainModel {
         this.phone = phone;
         this.remarks = remarks;
         this.attachment = attachment;
+        this.TimeStamp = TimeStamp;
     }
 
     public String getCode() {
@@ -89,5 +90,13 @@ public class ComplainModel {
 
     public void setAttachment(String attachment) {
         this.attachment = attachment;
+    }
+
+    public String getTimeStamp() {
+        return TimeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        TimeStamp = timeStamp;
     }
 }

@@ -23,6 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
+
         <activity android:name="com.e.nche.ShowComplain" />
         <activity android:name="com.e.nche.QrScan" />
         <activity android:name="com.e.nche.UpdateComplain" />

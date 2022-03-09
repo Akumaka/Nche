@@ -65,7 +65,7 @@ public class SecurityAgents extends AppCompatActivity {
     private List<String> list_key = new ArrayList<>();
     List<MyComplainModel> list = new ArrayList<>();
     private boolean connected = false;
-    String type;
+    String type = "General Complaints";
     private Uri downloadUri;
     private ProgressDialog mDialog;
 
@@ -108,10 +108,13 @@ public class SecurityAgents extends AppCompatActivity {
         ib_menu = findViewById(R.id.imageButton_menu);
 
         type = getIntent().getStringExtra("type");
+        Log.e("111111111",""+type);
         if (getIntent().getStringExtra("type") != null) {
-            login_title.setText(type);
-            if (type != null && !type.equals("General Complains"))
+            if (type != null && !type.equals("General Complaintss")) {
+                login_title.setText(type.substring(0, type.length() - 1) + " Reports");
                 textView_code.setText("6 Digits Code");
+            } else
+                login_title.setText(type.substring(0, type.length() - 1));
         } else
             login_title.setText("Admin");
 
@@ -160,7 +163,7 @@ public class SecurityAgents extends AppCompatActivity {
                         mDialog.setMessage("Please wait ...");
                         mDialog.setCancelable(false);
                         mDialog.show();
-                        if (et_digits.getText().toString().matches("\\d+(?:\\.\\d+)?") || !type.equals("General Complains")) {
+                        if (et_digits.getText().toString().matches("\\d+(?:\\.\\d+)?") || !type.equals("General Complaints")) {
                             boolean chk = false;
                             for (int i = 0; i < list.size(); i++) {
                                 if (list.get(i).getUnique().equals(et_digits.getText().toString())) {
@@ -252,7 +255,7 @@ public class SecurityAgents extends AppCompatActivity {
 
                                     TextView textView_model = findViewById(R.id.textView_model);
                                     EditText editText_complains_model = findViewById(R.id.editText_complains_model);
-                                    if (type.equals("General Complains")) {
+                                    if (type.equals("General Complaints")) {
                                         textView_model.setVisibility(View.VISIBLE);
                                         editText_complains_model.setVisibility(View.VISIBLE);
                                         editText_complains_model.setText(list.get(i).getModel());
@@ -275,7 +278,7 @@ public class SecurityAgents extends AppCompatActivity {
                                 if (mDialog.isShowing())
                                     mDialog.dismiss();
                             }
-                        } else if (type.equals("General Complains")) {
+                        } else if (type.equals("General Complaints")) {
                             final ProgressDialog mProgressDialog = new ProgressDialog(SecurityAgents.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert);
                             mProgressDialog.setTitle("Checking in database");
                             mProgressDialog.setMessage("Please wait...");
@@ -471,6 +474,9 @@ public class SecurityAgents extends AppCompatActivity {
 //        mProgressDialog.setCancelable(false);
 //        mProgressDialog.show();
 
+        if (type == null || type.equals(""))
+            type = "General Complaints";
+
         db.collection(type).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -491,7 +497,7 @@ public class SecurityAgents extends AppCompatActivity {
                         MyComplainModel model = new MyComplainModel(Key, Code, UniqueCode, Model, Name, Email, Phone, Remarks, Attachment, TimeStamp);
                         list.add(model);
 
-                        Log.e("......Unique", "" + documentSnapshot.getId());
+                        Log.e("......TimeStamp", "" + documentSnapshot.get("TimeStamp"));
                     }
 
 //                    if (mProgressDialog.isShowing())

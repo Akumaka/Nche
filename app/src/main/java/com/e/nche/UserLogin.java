@@ -85,10 +85,6 @@ public class UserLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
 
-        Typeface font = Typeface.createFromAsset(getResources().getAssets(), "fonts/algerianRegular.ttf");
-        TextView titleTv = findViewById(R.id.titleTv);
-        titleTv.setTypeface(font);
-
         if (getIntent().getStringExtra("BackPress") == null)
             checkLogin();
 

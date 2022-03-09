@@ -108,7 +108,7 @@ public class ReportHumanTrafficingActivity extends AppCompatActivity {
         mDialog.setCancelable(false);
         mDialog.show();
 
-        Query query = db.collection("General Complains").orderBy("TimeStamp", Query.Direction.DESCENDING);
+        Query query = db.collection("General Complaintss").orderBy("TimeStamp", Query.Direction.DESCENDING);
         query.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -136,12 +136,13 @@ public class ReportHumanTrafficingActivity extends AppCompatActivity {
 
     private void prepareComplainsDataEntries(String key) {
         complainIdList.add(key);
-        db.collection("General Complains").document(key)
+        db.collection("General Complaintss").document(key)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                         if (documentSnapshot != null && documentSnapshot.exists()) {
 
+                            String Key = documentSnapshot.getId();
                             String Code = documentSnapshot.get("Code").toString();
                             String Unique = documentSnapshot.get("UniqueCode").toString();
                             String Model = documentSnapshot.get("Model").toString();
@@ -150,17 +151,19 @@ public class ReportHumanTrafficingActivity extends AppCompatActivity {
                             String Phone = documentSnapshot.get("Phone").toString();
                             String Remarks = documentSnapshot.get("Remarks").toString();
                             String Attachment = documentSnapshot.get("Attachment").toString();
+                            String TimeStamp = documentSnapshot.get("TimeStamp").toString();
 
                             if (Code != null && Model != null && Name != null && Email != null && Phone != null
-                                    && Remarks != null && Attachment != null) {
+                                    && Remarks != null && Attachment != null && TimeStamp != null) {
 
                                 if (!Attachment.equals("Not Attached")) {
                                     Attachment = "Attached";
                                 }
 
-                                model = new MyComplainModel(Code, Unique, Model, Name, Email, Phone, Remarks, Attachment);
+                                model = new MyComplainModel(Key, Code, Unique, Model, Name, Email, Phone, Remarks, Attachment, TimeStamp);
                                 complainList.add(model);
 
+                                Key = null;
                                 Code = null;
                                 Model = null;
                                 Name = null;
@@ -168,6 +171,7 @@ public class ReportHumanTrafficingActivity extends AppCompatActivity {
                                 Phone = null;
                                 Remarks = null;
                                 Attachment = null;
+                                TimeStamp = null;
                             }
 
                             adapter.notifyDataSetChanged();

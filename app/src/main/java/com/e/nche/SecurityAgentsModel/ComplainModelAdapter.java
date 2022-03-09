@@ -56,6 +56,7 @@ public class ComplainModelAdapter extends RecyclerView.Adapter<ComplainModelAdap
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         final ComplainModel complainModel = complainList.get(position);
 
+        holder.c_time.setText(complainModel.getTimeStamp());
         holder.c_code.setText(complainModel.getCode());
         holder.c_unique.setText(complainModel.getUnique());
         holder.c_model.setText(complainModel.getModel());
@@ -65,7 +66,7 @@ public class ComplainModelAdapter extends RecyclerView.Adapter<ComplainModelAdap
         holder.c_remarks.setText(complainModel.getRemarks());
         holder.c_attachment.setText(complainModel.getAttachment());
 
-        if (!type.equals("General Complains")) {
+        if (!type.equals("General Complaints")) {
             holder.c_code.setVisibility(View.GONE);
             holder.c_model.setVisibility(View.GONE);
         }
@@ -165,11 +166,12 @@ public class ComplainModelAdapter extends RecyclerView.Adapter<ComplainModelAdap
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView c_code, c_unique, c_model, c_name, c_email, c_phone, c_remarks, c_attachment;
+        public TextView c_time, c_code, c_unique, c_model, c_name, c_email, c_phone, c_remarks, c_attachment;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            c_time = itemView.findViewById(R.id.c_time);
             c_code = itemView.findViewById(R.id.c_code);
             c_unique = itemView.findViewById(R.id.c_unique);
             c_model = itemView.findViewById(R.id.c_model);

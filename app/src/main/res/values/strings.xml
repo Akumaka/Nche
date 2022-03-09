@@ -12,7 +12,7 @@
     <string name="user_login_name">User Name:</string>
     <string name="user_login_password">Password:</string>
     <string name="user_login_login">Login</string>
-    <string name="user_login_public">Public Watch</string>
+    <string name="user_login_public">Vehicle Registration Check</string>
     <string name="user_login_complains">General Complaints</string>
     <string name="user_login_security">Security Agents Only</string>
 
@@ -58,15 +58,16 @@
     <string name="Button_Submit">Submit</string>
 
     // Public Watch
-    <string name="public_watch">Public Watch</string>
-    <string name="code">Registration Number/Type of Complaint</string>
+    <string name="public_watch">Vehicle Registration Check</string>
+    <string name="code">Registration Number/Unique Code</string>
     <string name="status">Status :</string>
     <string name="registration_number">Registration Number</string>
     <string name="Button">Submit</string>
     <string name="qrScan">Scan QR Code</string>
+    <string name="str_insert_registration_number">Insert Registration Number</string>
 
     //Complains
-    <string name="complains_four_digit_code">Registration Number/Type of Complaint</string>
+    <string name="complains_four_digit_code">Registration Number/Unique Code</string>
     <string name="complains_model">Model</string>
     <string name="complains_name">Name</string>
     <string name="complains_sender_name">Sender\'s Name</string>
@@ -86,13 +87,22 @@
         <item>Motorbike</item>
     </string-array>
 
+<!--    <string-array name="complain_type_array">-->
+<!--        <item>General Complains</item>-->
+<!--        <item>Human Trafficking Complains</item>-->
+<!--        <item>Illicit Drugs Complains</item>-->
+<!--        <item>Natural Disasters Complains</item>-->
+<!--        <item>Fire Disasters Complains</item>-->
+<!--        <item>Financial Crimes Complains</item>-->
+<!--    </string-array>-->
+
     <string-array name="complain_type_array">
-        <item>General Complains</item>
-        <item>Human Trafficking Complains</item>
-        <item>Illicit Drugs Complains</item>
-        <item>Natural Disasters Complains</item>
-        <item>Fire Disasters Complains</item>
-        <item>Financial Crimes Complains</item>
+        <item>General Complaints</item>
+        <item>Gun Attack</item>
+        <item>Drug Offence</item>
+        <item>Cultism</item>
+        <item>Human Trafficking</item>
+        <item>Fire Disaster</item>
     </string-array>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

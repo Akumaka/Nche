@@ -93,7 +93,7 @@ public class NotificationActivity extends AppCompatActivity {
     private Uri downloadUri;
     private void downloadComplain(final String complainId) {
 
-        db.collection("General Complains").document(complainId)
+        db.collection("General Complaintss").document(complainId)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {

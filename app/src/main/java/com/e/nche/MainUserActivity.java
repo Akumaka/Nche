@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -14,9 +15,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,14 +86,23 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
     boolean readStoragePermission = false;
     boolean writeStoragePermission = false;
 
+    NDSpinner spinner_general_complains;
+    String type = "General Complaints";
+    int check = 0;
+
+    int spinnerPosition = 0;
+
+    private TextView textView_emergency1;
+    private TextView textView_emergency2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Typeface font = Typeface.createFromAsset(getResources().getAssets(), "fonts/algerianRegular.ttf");
-        TextView titleTv = findViewById(R.id.titleTv);
-        titleTv.setTypeface(font);
+//        Typeface font = Typeface.createFromAsset(getResources().getAssets(), "fonts/algerianRegular.ttf");
+//        TextView titleTv = findViewById(R.id.titleTv);
+//        titleTv.setTypeface(font);
 
         if (getIntent().getStringExtra("BackPress") == null)
             checkLogin();
@@ -124,6 +137,9 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
         button_report_financial_crimes = findViewById(R.id.button_report_financial_crimes);
 
         cb_remember = findViewById(R.id.checkbox_remember);
+
+        textView_emergency1 = findViewById(R.id.textView_emergency1);
+        textView_emergency2 = findViewById(R.id.textView_emergency2);
 
         et_userName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -247,7 +263,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","General Complain");
+                intent.putExtra("type", "General Complain");
                 startActivity(intent);
             }
         });
@@ -265,7 +281,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","Human Trafficking Complain");
+                intent.putExtra("type", "Human Trafficking Complain");
                 startActivity(intent);
             }
         });
@@ -274,7 +290,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","Illicit Drugs Complain");
+                intent.putExtra("type", "Illicit Drugs Complain");
                 startActivity(intent);
             }
         });
@@ -283,7 +299,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","Natural Disasters Complain");
+                intent.putExtra("type", "Natural Disasters Complain");
                 startActivity(intent);
             }
         });
@@ -292,7 +308,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","Fire Disasters Complain");
+                intent.putExtra("type", "Fire Disasters Complain");
                 startActivity(intent);
             }
         });
@@ -301,7 +317,7 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
-                intent.putExtra("type","Financial Crimes Complain");
+                intent.putExtra("type", "Financial Crimes Complain");
                 startActivity(intent);
             }
         });
@@ -328,6 +344,67 @@ public class MainUserActivity extends AppCompatActivity implements NavigationVie
                 return false;
             }
         });
+
+        String[] complains_List = {"General Complaints", "Gun Attack", "Drug Offence", "Cultism",
+                "Human Trafficking", "Fire Disaster"
+//                ,"(ANISS) Emergency Lines\nAnambra Integrated\nSecurity Surveillance",
+//                "09017290990", "07939896429"
+        };
+//                "Lagos Emergency Lines", "767", "112"};
+        spinner_general_complains = findViewById(R.id.spinner_general_complains);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item, complains_List);
+        spinner_general_complains.setAdapter(adapter);
+
+        spinner_general_complains.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                Log.e("onItemSelected", "view: " + selectedItemView + "id: " + id
+                        + "pos: " + position + " selected: "
+                        + spinner_general_complains.getSelectedItem().toString().trim());
+
+                type = spinner_general_complains.getSelectedItem().toString().trim();
+
+                if (++check > 1 && !type.equals("Select Complain Type") && position < 6) {
+                    Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
+                    intent.putExtra("type", type);
+                    startActivity(intent);
+                }
+                if (++check > 1 && position > 6) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:" + type));
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                if (++check > 1 && !type.equals("Select Complain Type")) {
+                    Intent intent = new Intent(MainUserActivity.this, ComplainsActivity.class);
+                    intent.putExtra("type", type);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        textView_emergency1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:09017280990"));
+                startActivity(intent);
+            }
+        });
+
+        textView_emergency2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:07039896429"));
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void normalUser() {

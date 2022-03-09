@@ -1,6 +1,7 @@
 package com.e.nche.MyUserPanel;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,8 @@ public class MyComplainAdapter extends RecyclerView.Adapter<MyComplainAdapter.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         final MyComplainModel complainModel = complainList.get(position);
 
+        Log.e("...,,,///", "" + complainModel.getTimeStamp());
+        holder.c_time.setText(complainModel.getTimeStamp());
         holder.c_code.setText(complainModel.getCode());
 //        holder.c_model.setText(complainModel.getModel());
         holder.c_unique.setText(complainModel.getUnique());
@@ -49,7 +52,7 @@ public class MyComplainAdapter extends RecyclerView.Adapter<MyComplainAdapter.My
         holder.c_attachment.setText(complainModel.getAttachment());
 
         holder.c_model.setVisibility(View.GONE);
-        if (complainModel.getModel().equals("General Complains"))
+        if (complainModel.getModel().equals("General Complaints"))
             holder.c_code.setVisibility(View.VISIBLE);
         else
             holder.c_code.setVisibility(View.GONE);
@@ -80,12 +83,13 @@ public class MyComplainAdapter extends RecyclerView.Adapter<MyComplainAdapter.My
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView c_code, c_unique, c_model, c_name, c_email, c_phone, c_remarks, c_attachment;
+        public TextView c_time, c_code, c_unique, c_model, c_name, c_email, c_phone, c_remarks, c_attachment;
         public LinearLayout click;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            c_time = itemView.findViewById(R.id.c_time);
             c_code = itemView.findViewById(R.id.c_code);
             c_unique = itemView.findViewById(R.id.c_unique);
             c_model = itemView.findViewById(R.id.c_model);

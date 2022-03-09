@@ -64,7 +64,7 @@ public class AgentComplain extends AppCompatActivity {
         et_search = findViewById(R.id.editText_agent_search_view);
 
         adapter = new ComplainModelAdapter(complainList, type);
-        if (type != null && !type.equals("General Complains")) {
+        if (type != null && !type.equals("General Complaints")) {
             findViewById(R.id.a_c_code).setVisibility(View.GONE);
             findViewById(R.id.a_c_model).setVisibility(View.GONE);
         }
@@ -110,7 +110,7 @@ public class AgentComplain extends AppCompatActivity {
         complainIdList.clear();
 
         if (type == null || type.equals(""))
-            type = "General Complains";
+            type = "General Complaints";
         Query query = db.collection(type).orderBy("TimeStamp", Query.Direction.DESCENDING);
         query.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -152,6 +152,7 @@ public class AgentComplain extends AppCompatActivity {
                             String Phone = documentSnapshot.get("Phone").toString();
                             String Remarks = documentSnapshot.get("Remarks").toString();
                             String Attachment = documentSnapshot.get("Attachment").toString();
+                            String TimeStamp = documentSnapshot.get("TimeStamp").toString();
 
                             if (Code != null && Model != null && Name != null && Email != null && Phone != null
                                     && Remarks != null && Attachment != null) {
@@ -160,7 +161,7 @@ public class AgentComplain extends AppCompatActivity {
                                     Attachment = "Attached";
                                 }
 
-                                model = new ComplainModel(Code, Unique, Model, Name, Email, Phone, Remarks, Attachment);
+                                model = new ComplainModel(Code, Unique, Model, Name, Email, Phone, Remarks, Attachment, TimeStamp);
                                 complainList.add(model);
 
                                 Code = null;

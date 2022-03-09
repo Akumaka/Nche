@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/user_login_bg"
+    android:background="@android:color/white"
     tools:context=".NotificationActivity">
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -27,35 +26,23 @@
                 android:layout_marginRight="@dimen/_30sdp"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="@dimen/_20sdp">
-
-                    <TextView
-                        android:id="@+id/titleTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@drawable/user_login_title"
-                        android:fontFamily="@font/algerian"
-                        android:text="@string/app_title"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_22ssp" />
-
-                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/app_logo"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:srcCompat="@drawable/app_logo_white" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/header"
+                    android:layout_below="@id/app_logo"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@color/colorUserLoginDetails">
 
                     <TextView
@@ -66,8 +53,10 @@
                         android:layout_centerInParent="true"
                         android:padding="@dimen/_5sdp"
                         android:text="Register Complain"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_22ssp" />
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_20ssp"
+                        android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -84,8 +73,8 @@
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_four_digit_code"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_code"
@@ -95,7 +84,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
                             android:maxLength="8"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -104,13 +93,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_complains_code"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:drawableEnd="@drawable/asterisk"
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_model"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_model"
@@ -119,7 +108,7 @@
                             android:layout_below="@id/textView_model"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -128,13 +117,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_complains_model"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:drawableEnd="@drawable/asterisk"
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_name"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_name"
@@ -143,7 +132,7 @@
                             android:layout_below="@id/textView_name"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -152,13 +141,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_complains_name"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:drawableEnd="@drawable/asterisk"
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_email"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_email"
@@ -167,7 +156,7 @@
                             android:layout_below="@id/textView_email"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -176,13 +165,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_complains_email"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:drawableEnd="@drawable/asterisk"
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_phone"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_phone"
@@ -191,7 +180,7 @@
                             android:layout_below="@id/textView_phone"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -200,13 +189,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_complains_phone"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:drawableEnd="@drawable/asterisk"
                             android:drawableRight="@drawable/asterisk"
                             android:drawablePadding="@dimen/_5sdp"
                             android:text="@string/complains_remarks"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/_20ssp" />
+                            android:textColor="@color/colorUserTextView"
+                            android:textSize="@dimen/_14ssp" />
 
                         <EditText
                             android:id="@+id/editText_complains_remarks"
@@ -215,7 +204,7 @@
                             android:layout_below="@id/textView_remarks"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 

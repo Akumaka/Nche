@@ -144,7 +144,7 @@ public class UpdateComplain extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
                                                     Log.println(Log.ASSERT, "Complain", "download");
-                                                    db.collection("General Complains").document(complainId).delete();
+                                                    db.collection("General Complaintss").document(complainId).delete();
                                                     new Handler().postDelayed(new Runnable() {
                                                         @Override
                                                         public void run() {
@@ -162,7 +162,7 @@ public class UpdateComplain extends AppCompatActivity {
                                             });
                                 } else {
                                     Log.println(Log.ASSERT, "Complain", "null");
-                                    db.collection("General Complains").document(complainId).delete();
+                                    db.collection("General Complaintss").document(complainId).delete();
 
                                     new Handler().postDelayed(new Runnable() {
                                         @Override
@@ -195,7 +195,7 @@ public class UpdateComplain extends AppCompatActivity {
         note.put("Remarks", et_remarks.getText().toString().trim());
 
 
-        db.collection("General Complains").document(complainId).update(note)
+        db.collection("General Complaints").document(complainId).update(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -215,12 +215,12 @@ public class UpdateComplain extends AppCompatActivity {
 
     private void downloadComplain(final String complainId) {
 
-        String type = "General Complains";
+        String type = "General Complaints";
         if (getIntent().getStringExtra("type") != null)
             type = getIntent().getStringExtra("type");
         Log.e("typeeeee", "" + type);
 
-        if (!type.equals("General Complains")) {
+        if (!type.equals("General Complaints")) {
             findViewById(R.id.textView_code).setVisibility(View.GONE);
             findViewById(R.id.textView_model).setVisibility(View.GONE);
             et_code.setVisibility(View.GONE);

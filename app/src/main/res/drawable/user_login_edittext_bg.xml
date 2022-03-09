@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <solid
-        android:color="@android:color/white" />
+    <solid android:color="@android:color/transparent" />
 
     <stroke
-        android:color="@color/colorUserLoginEditTextStroke"
-        android:width="@dimen/_1sdp"/>
+        android:width="@dimen/_2sdp"
+        android:color="@color/colorUserLoginEditTextStroke" />
+
+    <corners
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp" />
 
 </shape>

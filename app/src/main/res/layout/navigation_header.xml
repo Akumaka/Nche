@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_weight="10"
-    android:background="#80BFCF"
+    android:background="#008C00"
     android:gravity="bottom"
     android:orientation="horizontal"
     android:padding="16dp">
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textAllCaps="true"
-        android:src="@drawable/icon_app" />
+        android:src="@drawable/app_logo_white"
+        android:textAllCaps="true" />
 
 </LinearLayout>

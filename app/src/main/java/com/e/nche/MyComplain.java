@@ -49,7 +49,7 @@ public class MyComplain extends AppCompatActivity {
     private EditText et_search;
     TextView a_c_code;
     private Spinner spinner_complain_type;
-    String type = "General Complains";
+    String type = "General Complaints";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +89,7 @@ public class MyComplain extends AppCompatActivity {
                 Log.e("onItemSelected", "pos: " + position + " selected: " + spinner_complain_type.getSelectedItem().toString().trim());
                 type = spinner_complain_type.getSelectedItem().toString().trim();
                 prepareComplainsData("Loading", "Please wait...", spinner_complain_type.getSelectedItem().toString().trim());
-                if (spinner_complain_type.getSelectedItem().toString().trim().equals("General Complains"))
+                if (spinner_complain_type.getSelectedItem().toString().trim().equals("General Complaints"))
                     a_c_code.setVisibility(View.VISIBLE);
                 else
                     a_c_code.setVisibility(View.GONE);
@@ -173,6 +173,7 @@ public class MyComplain extends AppCompatActivity {
                     public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                         if (documentSnapshot != null && documentSnapshot.exists()) {
 
+                            String Key = documentSnapshot.getId();
                             String Code = documentSnapshot.get("Code").toString();
                             String Unique = documentSnapshot.get("UniqueCode").toString();
 //                            String Model = documentSnapshot.get("Model").toString();
@@ -182,17 +183,19 @@ public class MyComplain extends AppCompatActivity {
                             String Phone = documentSnapshot.get("Phone").toString();
                             String Remarks = documentSnapshot.get("Remarks").toString();
                             String Attachment = documentSnapshot.get("Attachment").toString();
+                            String TimeStamp = documentSnapshot.get("TimeStamp").toString();
 
                             if (Code != null && Model != null && Name != null && Email != null && Phone != null
-                                    && Remarks != null && Attachment != null) {
+                                    && Remarks != null && Attachment != null && TimeStamp != null) {
 
                                 if (!Attachment.equals("Not Attached")) {
                                     Attachment = "Attached";
                                 }
 
-                                model = new MyComplainModel(Code, Unique, Model, Name, Email, Phone, Remarks, Attachment);
+                                model = new MyComplainModel(Key, Code, Unique, Model, Name, Email, Phone, Remarks, Attachment, TimeStamp);
                                 complainList.add(model);
 
+                                Key = null;
                                 Code = null;
                                 Model = null;
                                 Name = null;
@@ -200,6 +203,7 @@ public class MyComplain extends AppCompatActivity {
                                 Phone = null;
                                 Remarks = null;
                                 Attachment = null;
+                                TimeStamp = null;
                             }
                             adapter = new MyComplainAdapter(complainList, type);
                             recyclerView.setAdapter(adapter);

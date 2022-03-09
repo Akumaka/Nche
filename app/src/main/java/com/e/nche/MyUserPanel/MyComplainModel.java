@@ -1,23 +1,12 @@
 package com.e.nche.MyUserPanel;
 
 public class MyComplainModel {
-    private String key, code, unique, model, name, email, phone, remarks, attachment, timeStamp;
+    private String key, code, unique, model, name, email, phone, remarks, attachment, TimeStamp;
 
     public MyComplainModel() {
     }
 
-    public MyComplainModel(String code, String unique, String model, String name, String email, String phone, String remarks, String attachment) {
-        this.code = code;
-        this.unique = unique;
-        this.model = model;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.remarks = remarks;
-        this.attachment = attachment;
-    }
-
-    public MyComplainModel(String key, String code, String unique, String model, String name, String email, String phone, String remarks, String attachment, String timeStamp) {
+    public MyComplainModel(String key, String code, String unique, String model, String name, String email, String phone, String remarks, String attachment, String TimeStamp) {
         this.key = key;
         this.code = code;
         this.unique = unique;
@@ -27,7 +16,7 @@ public class MyComplainModel {
         this.phone = phone;
         this.remarks = remarks;
         this.attachment = attachment;
-        this.timeStamp = timeStamp;
+        this.TimeStamp = TimeStamp;
     }
 
     public String getKey() {
@@ -103,10 +92,10 @@ public class MyComplainModel {
     }
 
     public String getTimeStamp() {
-        return timeStamp;
+        return TimeStamp;
     }
 
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimeStamp(String TimeStamp) {
+        this.TimeStamp = TimeStamp;
     }
 }

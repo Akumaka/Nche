@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/user_login_bg"
+    android:background="@android:color/white"
     tools:context=".SecurityAgents">
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_weight=".4"
             android:gravity="center"
             android:padding="@dimen/_5sdp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorUserTextView"
             android:textSize="@dimen/_20ssp" />
 
         <ImageButton
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.6"
-            android:background="@color/colorUserLoginTitle"
+            android:background="@android:color/transparent"
             android:padding="@dimen/_2sdp"
             android:src="@drawable/vicab_menu" />
 
@@ -54,32 +54,19 @@
                 android:layout_marginRight="@dimen/_30sdp"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="@dimen/_60sdp">
-
-                    <TextView
-                        android:id="@+id/titleTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@drawable/user_login_title"
-                        android:fontFamily="@font/algerian"
-                        android:text="@string/app_title"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_22ssp" />
-
-                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/app_logo"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/app_logo_white" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/header"
+                    android:layout_below="@id/app_logo"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginLeft="@dimen/_12sdp"
@@ -97,10 +84,13 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="-2dp"
+                        android:gravity="center"
                         android:padding="@dimen/_5sdp"
                         android:text="@string/user_login_security"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/_22ssp" />
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_20ssp"
+                        android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -141,7 +131,7 @@
                             android:layout_below="@id/button_agent_qrScan"
                             android:layout_marginTop="@dimen/_20sdp"
                             android:text="@string/code"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorUserTextView"
                             android:textSize="@dimen/_16ssp" />
 
                         <EditText
@@ -152,7 +142,7 @@
                             android:layout_marginTop="@dimen/_10sdp"
                             android:background="@drawable/user_login_edittext_bg"
                             android:maxLength="8"
-                            android:padding="@dimen/_3sdp"
+                            android:padding="@dimen/_6sdp"
                             android:textCursorDrawable="@drawable/edittext_cursor"
                             android:textSize="@dimen/_18ssp" />
 
@@ -161,7 +151,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/editText_security_code"
-                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
                             android:background="@drawable/user_login_button_bg"
                             android:text="Search"
                             android:textAllCaps="false"
@@ -175,7 +165,7 @@
                             android:layout_below="@id/button_security_search"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:text="@string/status"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorUserTextView"
                             android:textSize="@dimen/_16ssp"
                             android:visibility="gone" />
 
@@ -205,7 +195,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/registration_number"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -225,7 +215,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/user_login_tracking_number"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -244,7 +234,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:text="Vehicle Type :"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -263,7 +253,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:text="Route :"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -283,7 +273,7 @@
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:singleLine="true"
                                 android:text="Phone Number Of Operator :"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -303,7 +293,7 @@
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:singleLine="true"
                                 android:text="Address Of Operator :"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -339,7 +329,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:text="Unique Code"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp"
                                 android:visibility="gone" />
 
@@ -366,7 +356,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:text="@string/complains_model"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp"
                                 android:visibility="gone" />
 
@@ -392,7 +382,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:text="@string/complains_sender_name"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -416,7 +406,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:text="@string/complains_email"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp"
                                 android:visibility="visible" />
 
@@ -442,7 +432,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:text="@string/complains_phone"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp" />
 
                             <EditText
@@ -465,7 +455,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:text="@string/complains_remarks"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/colorUserTextView"
                                 android:textSize="@dimen/_16ssp"
                                 app:drawableEndCompat="@drawable/asterisk" />
 

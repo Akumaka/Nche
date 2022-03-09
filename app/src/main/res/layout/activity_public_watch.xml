@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/user_login_bg"
+    android:background="@android:color/white"
     tools:context=".PublicWatch">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_30sdp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/_30sdp">
 
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="@dimen/_20sdp">
-
-            <TextView
-                android:id="@+id/titleTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/user_login_title"
-                android:text="@string/app_title"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_22ssp" />
-
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/app_logo_white" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/header"
+            android:layout_below="@id/app_logo"
             android:layout_centerInParent="true"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_60sdp"
             android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:background="@color/colorUserLoginDetails">
+            android:layout_marginRight="@dimen/_12sdp">
 
             <TextView
                 android:id="@+id/login_title"
@@ -54,45 +39,50 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
+                android:gravity="center"
                 android:padding="@dimen/_5sdp"
                 android:text="@string/public_watch"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_30ssp" />
+                android:textAllCaps="true"
+                android:textColor="@color/colorUserTextView"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/login_title"
-                android:layout_marginTop="@dimen/_10sdp">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:text="@string/code"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/_16ssp" />
+                    android:text="@string/str_insert_registration_number"
+                    android:textColor="@color/colorUserTextView"
+                    android:textSize="@dimen/_14ssp" />
 
                 <EditText
                     android:id="@+id/editText_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_code"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/user_login_edittext_bg"
                     android:maxLength="8"
-                    android:padding="@dimen/_3sdp"
+                    android:padding="@dimen/_6sdp"
                     android:textCursorDrawable="@drawable/edittext_cursor"
                     android:textSize="@dimen/_18ssp" />
 
                 <Button
                     android:id="@+id/button_submit"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/editText_code"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:background="@drawable/user_login_button_bg"
+                    android:paddingStart="@dimen/_40sdp"
+                    android:paddingEnd="@dimen/_40sdp"
                     android:text="@string/Button"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -102,7 +92,6 @@
                     android:id="@+id/button_qrScan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/button_submit"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/user_login_button_bg"
@@ -116,7 +105,6 @@
                     android:id="@+id/textView_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/button_qrScan"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="@string/status"
                     android:textColor="@android:color/white"
@@ -159,7 +147,7 @@
                     android:textSize="@dimen/_18ssp"
                     android:visibility="gone" />
 
-            </RelativeLayout>
+            </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
