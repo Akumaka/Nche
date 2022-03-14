@@ -477,7 +477,7 @@ public class SecurityAgents extends AppCompatActivity {
         if (type == null || type.equals(""))
             type = "General Complaints";
 
-        db.collection(type).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection(type+"s").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {

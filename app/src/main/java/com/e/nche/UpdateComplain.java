@@ -227,7 +227,7 @@ public class UpdateComplain extends AppCompatActivity {
             et_model.setVisibility(View.GONE);
         }
 
-        db.collection(type).document(complainId)
+        db.collection(type + "s").document(complainId)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {

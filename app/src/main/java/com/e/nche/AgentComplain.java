@@ -108,7 +108,7 @@ public class AgentComplain extends AppCompatActivity {
     }
 
     private void prepareComplainsData() {
-        complainIdList.clear();
+//        complainIdList.clear();
 
         if (type == null || type.equals(""))
             type = "General Complaints";
@@ -118,6 +118,8 @@ public class AgentComplain extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful() && task.getResult() != null && task.getResult().size() > 0) {
+                            Log.e("Agent Complain Success", "" + task.getResult());
+                            mDialog.dismiss();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 String key = document.getId();
                                 prepareComplainsDataEntries(key);
@@ -139,7 +141,7 @@ public class AgentComplain extends AppCompatActivity {
 
     private void prepareComplainsDataEntries(String key) {
         complainIdList.add(key);
-        db.collection(type).document(key)
+        db.collection(type + "s").document(key)
                 .addSnapshotListener(new EventListener<DocumentSnapshot>() {
                     @Override
                     public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
