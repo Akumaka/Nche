@@ -14,6 +14,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.e.nche.SecurityAgentsModel.ComplainModel;
 import com.e.nche.SecurityAgentsModel.ComplainModelAdapter;
@@ -111,7 +112,7 @@ public class AgentComplain extends AppCompatActivity {
 
         if (type == null || type.equals(""))
             type = "General Complaints";
-        Query query = db.collection(type).orderBy("TimeStamp", Query.Direction.DESCENDING);
+        Query query = db.collection(type + "s").orderBy("TimeStamp", Query.Direction.DESCENDING);
         query.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -129,7 +130,9 @@ public class AgentComplain extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.println(Log.ASSERT, "Registered Vehicles", e.toString());
+                        mDialog.dismiss();
+                        Toast.makeText(AgentComplain.this, e.toString(), Toast.LENGTH_SHORT).show();
+                        Log.e("Agent Complain Error", "" + e);
                     }
                 });
     }
