@@ -10,834 +10,829 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/_30sdp">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/app_logo"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/app_logo_white" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/_30sdp">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/colorUserLoginDetails">
 
-                <ImageView
-                    android:id="@+id/app_logo"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/app_logo_white" />
+                <TextView
+                    android:id="@+id/login_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Detail Update"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorUserTextView"
+                    android:textSize="@dimen/_22ssp"
+                    android:textStyle="bold" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@color/colorUserLoginDetails">
+                    android:layout_below="@id/login_title">
 
                     <TextView
-                        android:id="@+id/login_title"
+                        android:id="@+id/textView_vehicle_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerInParent="true"
-                        android:padding="@dimen/_5sdp"
-                        android:text="Detail Update"
-                        android:textAllCaps="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_type"
                         android:textColor="@color/colorUserTextView"
-                        android:textSize="@dimen/_22ssp"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/_18ssp" />
 
-                    <RelativeLayout
+                    <Spinner
+                        android:id="@+id/editText_vehicle_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/login_title">
+                        android:layout_below="@id/textView_vehicle_type"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:entries="@array/type_array"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <TextView
-                            android:id="@+id/textView_vehicle_type"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_type"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_vehicle_type"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_model"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <Spinner
-                            android:id="@+id/editText_vehicle_type"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_vehicle_type"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:entries="@array/type_array"
-                            android:padding="@dimen/_8sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
+                    <EditText
+                        android:id="@+id/editText_model"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_model"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_model"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_vehicle_type"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_model"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_route"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_model"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_route"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_model"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_model"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_vehicle_route"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_route"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_route"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_model"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_route"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_operation_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_vehicle_route"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_operation_unit"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_vehicle_route"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_route"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_operation_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_operation_unit"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_operation_unit"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_vehicle_route"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_operation_unit"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_registration_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_operation_unit"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="false"
+                        android:text="@string/code"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_operation_unit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_operation_unit"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_registration_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_registration_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:maxLength="8"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_registration_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_operation_unit"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="false"
-                            android:text="@string/code"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_engine_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_registration_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_engine_number"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_registration_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_registration_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:maxLength="8"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_engine_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_engine_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_engine_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_registration_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_engine_number"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/vehicle_tracking_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_engine_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/user_login_tracking_number"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_engine_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_engine_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_tracking_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vehicle_tracking_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/vehicle_tracking_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_engine_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/user_login_tracking_number"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_tracking_number"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/owner_ship_title"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_22ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_tracking_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/vehicle_tracking_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <TextView
+                        android:id="@+id/owner_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_title"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_name"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_tracking_number"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:padding="@dimen/_5sdp"
-                            android:text="@string/owner_ship_title"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_22ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_name"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_title"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_name"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_current_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_name"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_current_address"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_name"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_current_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_current_address"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_current_address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_name"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_current_address"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_nationality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_current_address"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_nationality"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_current_address"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_current_address"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_nationality"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_nationality"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_current_address"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_nationality"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_nationality"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_origin"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_nationality"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_nationality"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_origin"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_origin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_nationality"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_origin"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_govt_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_origin"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_govt_area"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_origin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_origin"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
-
-                        <TextView
-                            android:id="@+id/owner_govt_area"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_origin"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_govt_area"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_owner_govt_area"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_govt_area"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_govt_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_govt_area"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
 
-                        <TextView
-                            android:id="@+id/owner_homeTown"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_govt_area"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_home_town"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_homeTown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_govt_area"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_home_town"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_homeTown"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_homeTown"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_homeTown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_homeTown"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_phoneNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_homeTown"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_phone_number"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_phoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_homeTown"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_phone_number"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_phoneNumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_phoneNumber"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_phoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_phoneNumber"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_phoneNumber"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/owner_ship_email"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_phoneNumber"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/owner_ship_email"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_owner_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_email"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_owner_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_email"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <Button
-                            android:id="@+id/button_verify_owner_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_owner_email"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:text="Click to verify e-mail"
-                            android:textAllCaps="false"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_14ssp"
-                            android:visibility="gone" />
+                    <Button
+                        android:id="@+id/button_verify_owner_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_owner_email"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:text="Click to verify e-mail"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="gone" />
 
-                        <TextView
-                            android:id="@+id/driver_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/button_verify_owner_email"
-                            android:padding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_title"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_22ssp" />
+                    <TextView
+                        android:id="@+id/driver_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/button_verify_owner_email"
+                        android:padding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_title"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_22ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_driver_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/driver_title"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:ellipsize="marquee"
-                            android:focusable="true"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:scrollHorizontally="true"
-                            android:singleLine="true"
-                            android:text="@string/driver_name"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_driver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/driver_title"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="@string/driver_name"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_driver_name"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_driver_name"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_diver_ResidenceAddress"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_name"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_residence"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_diver_ResidenceAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_name"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_residence"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_ResidenceAddress"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_diver_ResidenceAddress"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_ResidenceAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_diver_ResidenceAddress"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_diver_Nationality"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_ResidenceAddress"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_nationality"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_diver_Nationality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_ResidenceAddress"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_nationality"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_Nationality"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_diver_Nationality"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_Nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_diver_Nationality"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_diver_Origin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_Nationality"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_origin"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_diver_Origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_Nationality"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_origin"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_Origin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_diver_Origin"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_Origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_diver_Origin"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_diver_Government_area"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_Origin"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_Govt_area"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_diver_Government_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_Origin"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_Govt_area"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_Government_area"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_diver_Government_area"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_Government_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_diver_Government_area"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/owner_diver_Home_town"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_Government_area"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_home_town"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/owner_diver_Home_town"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_Government_area"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_home_town"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_Home_town"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/owner_diver_Home_town"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_Home_town"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/owner_diver_Home_town"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/TextView_photograph"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_Home_town"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/driver_photo"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/TextView_photograph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_Home_town"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/driver_photo"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <ImageView
-                            android:id="@+id/imageView_capture"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/TextView_photograph"
-                            android:layout_centerInParent="true"
-                            android:layout_marginStart="@dimen/_25sdp"
-                            android:layout_marginLeft="@dimen/_25sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginEnd="@dimen/_25sdp"
-                            android:layout_marginRight="@dimen/_25sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            android:src="@drawable/capture_image" />
+                    <ImageView
+                        android:id="@+id/imageView_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/TextView_photograph"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_25sdp"
+                        android:layout_marginRight="@dimen/_25sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/capture_image" />
 
-                        <Button
-                            android:id="@+id/button_capture"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/imageView_capture"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginEnd="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_35sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:gravity="center"
-                            android:padding="@dimen/_1sdp"
-                            android:text="@string/capture"
-                            android:textAllCaps="false"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
+                    <Button
+                        android:id="@+id/button_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imageView_capture"
+                        android:layout_marginStart="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_35sdp"
+                        android:layout_marginRight="@dimen/_35sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:gravity="center"
+                        android:padding="@dimen/_1sdp"
+                        android:text="@string/capture"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <TextView
-                            android:id="@+id/textView_FingurePrint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/button_capture"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/fingure_print"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp"
-                            android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/textView_FingurePrint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/button_capture"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/fingure_print"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="gone" />
 
-                        <ImageView
-                            android:id="@+id/imageView_fingurePrint"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_FingurePrint"
-                            android:layout_centerInParent="true"
-                            android:layout_marginStart="@dimen/_25sdp"
-                            android:layout_marginLeft="@dimen/_25sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginEnd="@dimen/_25sdp"
-                            android:layout_marginRight="@dimen/_25sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            android:src="@drawable/capture_finger"
-                            android:visibility="gone" />
+                    <ImageView
+                        android:id="@+id/imageView_fingurePrint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_FingurePrint"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_25sdp"
+                        android:layout_marginRight="@dimen/_25sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:src="@drawable/capture_finger"
+                        android:visibility="gone" />
 
-                        <Button
-                            android:id="@+id/button_scan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/imageView_fingurePrint"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginEnd="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_35sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:gravity="center"
-                            android:padding="@dimen/_1sdp"
-                            android:text="@string/scan"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp"
-                            android:visibility="gone" />
+                    <Button
+                        android:id="@+id/button_scan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imageView_fingurePrint"
+                        android:layout_marginStart="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_35sdp"
+                        android:layout_marginRight="@dimen/_35sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:gravity="center"
+                        android:padding="@dimen/_1sdp"
+                        android:text="@string/scan"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="gone" />
 
 
-                        <TextView
-                            android:id="@+id/textView_driver_phonenumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/button_scan"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/phone_number"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/textView_driver_phonenumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/button_scan"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/phone_number"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_phonenumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_driver_phonenumber"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_phonenumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_driver_phonenumber"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <TextView
-                            android:id="@+id/textView_driver_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_phonenumber"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:singleLine="true"
-                            android:text="@string/email_address"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_18ssp" />
+                    <TextView
+                        android:id="@+id/textView_driver_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_phonenumber"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text="@string/email_address"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_driver_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_driver_email"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:singleLine="true"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_16ssp" />
+                    <EditText
+                        android:id="@+id/editText_driver_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_driver_email"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_16ssp" />
 
-                        <Button
-                            android:id="@+id/button_verify_driver_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_driver_email"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:text="Click to verify e-mail"
-                            android:textAllCaps="false"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_14ssp"
-                            android:visibility="gone" />
+                    <Button
+                        android:id="@+id/button_verify_driver_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_driver_email"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:text="Click to verify e-mail"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="gone" />
 
-                        <Button
-                            android:id="@+id/button_update"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/button_verify_driver_email"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginBottom="@dimen/_20sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:gravity="center"
-                            android:padding="@dimen/_3sdp"
-                            android:text="Update"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
+                    <Button
+                        android:id="@+id/button_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/button_verify_driver_email"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp"
+                        android:text="Update"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <Button
-                            android:id="@+id/button_delete"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/button_update"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginBottom="@dimen/_20sdp"
-                            android:background="@drawable/user_login_button_bg"
-                            android:gravity="center"
-                            android:padding="@dimen/_3sdp"
-                            android:text="Delete"
-                            android:textColor="@android:color/white"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp"
-                            android:visibility="gone" />
-
-                    </RelativeLayout>
+                    <Button
+                        android:id="@+id/button_delete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/button_update"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/user_login_button_bg"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp"
+                        android:text="Delete"
+                        android:textColor="@android:color/white"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp"
+                        android:visibility="gone" />
 
                 </RelativeLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 

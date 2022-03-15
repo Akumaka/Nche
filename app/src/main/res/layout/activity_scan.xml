@@ -3,36 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/user_login_button_bg"
+    android:orientation="vertical"
     tools:context=".ScanActivity">
 
     <TextView
+        android:id="@+id/tvStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvStatus"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/_100sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_100sdp"
         android:layout_marginEnd="@dimen/_30sdp"
-        android:textSize="@dimen/_20ssp"
+        android:layout_marginRight="@dimen/_30sdp"
         android:background="@drawable/user_login_edittext_bg"
         android:gravity="center"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/tvError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvStatus"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_30sdp"
-        android:textSize="@dimen/_20ssp"
+        android:layout_marginRight="@dimen/_30sdp"
         android:background="@drawable/user_login_edittext_bg"
         android:gravity="center"
-        android:id="@+id/tvError"/>
+        android:textSize="@dimen/_20ssp" />
 
 </RelativeLayout>

@@ -4,256 +4,251 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".NotificationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:background="@android:color/white"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/app_logo"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/app_logo_white" />
+
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginLeft="@dimen/_30sdp"
-                android:layout_marginEnd="@dimen/_30sdp"
-                android:layout_marginRight="@dimen/_30sdp"
-                android:orientation="vertical">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/app_logo"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@color/colorUserLoginDetails">
 
-                <ImageView
-                    android:id="@+id/app_logo"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    app:srcCompat="@drawable/app_logo_white" />
-
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/login_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/app_logo"
+                    android:layout_alignParentTop="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginBottom="@dimen/_20sdp"
-                    android:background="@color/colorUserLoginDetails">
+                    android:padding="@dimen/_5sdp"
+                    android:text="Register Complain"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorUserTextView"
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/login_title"
+                    android:layout_marginTop="@dimen/_10sdp">
 
                     <TextView
-                        android:id="@+id/login_title"
+                        android:id="@+id/textView_code"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerInParent="true"
-                        android:padding="@dimen/_5sdp"
-                        android:text="Register Complain"
-                        android:textAllCaps="true"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_four_digit_code"
                         android:textColor="@color/colorUserTextView"
-                        android:textSize="@dimen/_20ssp"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/_14ssp" />
 
-                    <RelativeLayout
+                    <EditText
+                        android:id="@+id/editText_complains_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/login_title"
-                        android:layout_marginTop="@dimen/_10sdp">
+                        android:layout_below="@id/textView_code"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:maxLength="8"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
 
-                        <TextView
-                            android:id="@+id/textView_code"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_four_digit_code"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
+                    <TextView
+                        android:id="@+id/textView_model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_code"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_model"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_14ssp" />
 
-                        <EditText
-                            android:id="@+id/editText_complains_code"
+                    <EditText
+                        android:id="@+id/editText_complains_model"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_model"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        android:id="@+id/textView_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_model"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_name"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:id="@+id/editText_complains_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_name"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        android:id="@+id/textView_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_name"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_email"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:id="@+id/editText_complains_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_email"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        android:id="@+id/textView_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_email"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_phone"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:id="@+id/editText_complains_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_phone"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        android:id="@+id/textView_remarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_phone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/asterisk"
+                        android:drawableRight="@drawable/asterisk"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/complains_remarks"
+                        android:textColor="@color/colorUserTextView"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:id="@+id/editText_complains_remarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_remarks"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/user_login_edittext_bg"
+                        android:padding="@dimen/_6sdp"
+                        android:textCursorDrawable="@drawable/edittext_cursor"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_download"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editText_complains_remarks"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imageView_download"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_code"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:maxLength="8"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
+                            android:layout_height="@dimen/_200sdp"
+                            android:visibility="gone" />
 
-                        <TextView
-                            android:id="@+id/textView_model"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_code"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_model"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_complains_model"
+                        <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_model"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/textView_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_model"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_name"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_complains_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_name"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
-
-                        <TextView
-                            android:id="@+id/textView_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_name"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_email"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_complains_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_email"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
-
-                        <TextView
-                            android:id="@+id/textView_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_email"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_phone"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_complains_phone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_phone"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
-
-                        <TextView
-                            android:id="@+id/textView_remarks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_phone"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:drawableEnd="@drawable/asterisk"
-                            android:drawableRight="@drawable/asterisk"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:text="@string/complains_remarks"
-                            android:textColor="@color/colorUserTextView"
-                            android:textSize="@dimen/_14ssp" />
-
-                        <EditText
-                            android:id="@+id/editText_complains_remarks"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/textView_remarks"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/user_login_edittext_bg"
-                            android:padding="@dimen/_6sdp"
-                            android:textCursorDrawable="@drawable/edittext_cursor"
-                            android:textSize="@dimen/_18ssp" />
-
-                        <LinearLayout
-                            android:id="@+id/layout_download"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/editText_complains_remarks"
-                            android:layout_marginTop="@dimen/_20sdp"
-                            android:orientation="vertical"
-                            android:visibility="gone">
-
-                            <ImageView
-                                android:id="@+id/imageView_download"
+                            <VideoView
+                                android:id="@+id/videoView_download"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/_200sdp"
                                 android:visibility="gone" />
 
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                        </FrameLayout>
 
-                                <VideoView
-                                    android:id="@+id/videoView_download"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_200sdp"
-                                    android:visibility="gone" />
+                    </LinearLayout>
 
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/textView_update_status"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/layout_download"
-                            android:layout_marginTop="@dimen/_20sdp"
-                            android:padding="@dimen/_5sdp"
-                            android:textSize="@dimen/_20ssp"
-                            android:visibility="gone" />
-
-                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/textView_update_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_download"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/_20ssp"
+                        android:visibility="gone" />
 
                 </RelativeLayout>
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </ScrollView>
 

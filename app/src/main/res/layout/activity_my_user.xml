@@ -57,7 +57,7 @@
             android:layout_marginBottom="@dimen/_10sdp"
             android:background="@drawable/user_login_button_bg"
             android:padding="@dimen/_10sdp"
-            android:text="Add New User"
+            android:text="@string/str_add_new_user"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_14ssp" />
@@ -79,8 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_5sdp"
-            android:drawableEnd="@drawable/ic_cancel_black"
-            android:drawableRight="@drawable/ic_cancel_black" />
+            app:drawableEndCompat="@drawable/ic_cancel_black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Id :"
+                android:text="@string/str_id_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -108,13 +107,14 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="LabelFor,TextFields" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Name :"
+                android:text="@string/str_name_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -126,13 +126,14 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="LabelFor,TextFields" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Password :"
+                android:text="@string/str_password_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -144,14 +145,15 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/tv_complain_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="User Type :"
+                android:text="@string/str_user_type_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp"
                 android:visibility="gone" />
@@ -178,7 +180,7 @@
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@color/colorUserLoginEditTextStroke"
                 android:padding="@dimen/_10sdp"
-                android:text="Add"
+                android:text="@string/str_add"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_14ssp" />
@@ -219,7 +221,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Id :"
+                android:text="@string/str_id_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -230,15 +232,17 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
+                android:focusable="false"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Name :"
+                android:text="@string/str_name_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -250,13 +254,14 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="LabelFor,TextFields" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Password :"
+                android:text="@string/str_password_"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_18ssp" />
 
@@ -268,7 +273,8 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:padding="@dimen/_3sdp"
                 android:textCursorDrawable="@drawable/edittext_cursor"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                tools:ignore="LabelFor,TextFields" />
 
             <Button
                 android:id="@+id/button_add_user_update_update"
@@ -282,7 +288,7 @@
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@color/colorUserLoginEditTextStroke"
                 android:padding="@dimen/_10sdp"
-                android:text="Update"
+                android:text="@string/str_update"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_14ssp" />

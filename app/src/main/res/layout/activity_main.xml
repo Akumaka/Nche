@@ -27,334 +27,331 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/_30sdp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/app_logo"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/app_logo_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/_30sdp">
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="The 21st century digital vigilante volunteering platform for decent and patriotic citizens"
+                    android:textColor="@color/colorUserTextView"
+                    android:textSize="@dimen/_12ssp" />
 
-                    <ImageView
-                        android:id="@+id/app_logo"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="@dimen/_100sdp"
-                        android:layout_gravity="center_horizontal"
-                        app:srcCompat="@drawable/app_logo_white" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@color/colorUserLoginDetails">
 
                     <TextView
+                        android:id="@+id/login_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:gravity="center"
-                        android:text="The 21st century digital vigilante volunteering platform for decent and patriotic citizens"
-                        android:textColor="@color/colorUserTextView"
-                        android:textSize="@dimen/_12ssp" />
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/user_login_title"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_34ssp"
+                        android:visibility="gone" />
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_30sdp"
-                        android:background="@color/colorUserLoginDetails">
+                        android:layout_below="@id/login_title"
+                        android:layout_marginTop="@dimen/_10sdp">
 
                         <TextView
-                            android:id="@+id/login_title"
+                            android:id="@+id/textView_user_login_user_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerInParent="true"
-                            android:padding="@dimen/_5sdp"
-                            android:text="@string/user_login_title"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/user_login_name"
                             android:textColor="@android:color/white"
-                            android:textSize="@dimen/_34ssp"
+                            android:textSize="@dimen/_18ssp"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/editText_user_login_user_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_user_login_user_name"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/user_login_edittext_bg"
+                            android:inputType="text"
+                            android:maxLength="16"
+                            android:padding="@dimen/_8sdp"
+                            android:singleLine="true"
+                            android:textCursorDrawable="@drawable/edittext_cursor"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textView_user_login_user_pwd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_user_login_user_name"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/user_login_password"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_18ssp"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/editText_user_login_pwd_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView_user_login_user_pwd"
+                            android:visibility="gone"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editText_user_login_pwd_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/user_login_edittext_bg"
+                                android:inputType="textPassword"
+                                android:maxLength="20"
+                                android:padding="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:textCursorDrawable="@drawable/edittext_cursor"
+                                android:textSize="@dimen/_16ssp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <CheckBox
+                            android:id="@+id/checkbox_remember"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_user_login"
+                            android:buttonTint="@color/colorUserLoginEditTextStroke"
+                            android:checked="true"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Remember me"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_12ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_user_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/editText_user_login_pwd_layout"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/user_login_title"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
                             android:visibility="gone" />
 
                         <RelativeLayout
+                            android:id="@+id/relative_general_complains"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/login_title"
-                            android:layout_marginTop="@dimen/_10sdp">
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg">
 
-                            <TextView
-                                android:id="@+id/textView_user_login_user_name"
+                            <com.e.nche.NDSpinner
+                                android:id="@+id/spinner_general_complains"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:popupBackground="@color/colorUserLoginButton"
+                                android:spinnerMode="dropdown"
+                                android:textAlignment="center" />
+
+                            <ImageView
+                                android:id="@+id/imageView"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:text="@string/user_login_name"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_18ssp"
-                                android:visibility="gone" />
-
-                            <EditText
-                                android:id="@+id/editText_user_login_user_name"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/textView_user_login_user_name"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:background="@drawable/user_login_edittext_bg"
-                                android:inputType="text"
-                                android:maxLength="16"
-                                android:padding="@dimen/_8sdp"
-                                android:singleLine="true"
-                                android:textCursorDrawable="@drawable/edittext_cursor"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <TextView
-                                android:id="@+id/textView_user_login_user_pwd"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/editText_user_login_user_name"
-                                android:layout_marginTop="@dimen/_5sdp"
-                                android:text="@string/user_login_password"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_18ssp"
-                                android:visibility="gone" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/editText_user_login_pwd_layout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/textView_user_login_user_pwd"
-                                android:visibility="gone"
-                                app:passwordToggleEnabled="true">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/editText_user_login_pwd_et"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:background="@drawable/user_login_edittext_bg"
-                                    android:inputType="textPassword"
-                                    android:maxLength="20"
-                                    android:padding="@dimen/_3sdp"
-                                    android:singleLine="true"
-                                    android:textCursorDrawable="@drawable/edittext_cursor"
-                                    android:textSize="@dimen/_16ssp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                            <CheckBox
-                                android:id="@+id/checkbox_remember"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_user_login"
-                                android:buttonTint="@color/colorUserLoginEditTextStroke"
-                                android:checked="true"
-                                android:padding="@dimen/_5sdp"
-                                android:text="Remember me"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_12ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_user_login"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/editText_user_login_pwd_layout"
-                                android:layout_marginTop="@dimen/_30sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/user_login_title"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <RelativeLayout
-                                android:id="@+id/relative_general_complains"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg">
-
-                                <com.e.nche.NDSpinner
-                                    android:id="@+id/spinner_general_complains"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="@android:color/transparent"
-                                    android:popupBackground="@color/colorUserLoginButton"
-                                    android:spinnerMode="dropdown"
-                                    android:textAlignment="center" />
-
-                                <ImageView
-                                    android:id="@+id/imageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_marginTop="@dimen/_10sdp"
-                                    android:layout_marginEnd="@dimen/_5sdp"
-                                    android:src="@drawable/ic_baseline_keyboard_arrow_down" />
-
-                            </RelativeLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linear_emergency"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/relative_general_complains"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="#80000000"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_10sdp"
-                                android:visibility="gone">
-
-                                <TextView
-                                    android:id="@+id/textView_emergency"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Anambra Integrated\nSecurity Surveillance\n(ANISS) \nEmergency Phone Lines"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="@dimen/_15ssp" />
-
-                                <TextView
-                                    android:id="@+id/textView_emergency1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_8sdp"
-                                    android:gravity="center"
-                                    android:text="09017280990"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="@dimen/_18ssp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/textView_emergency2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:gravity="center"
-                                    android:text="07039896429"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="@dimen/_18ssp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                            <Button
-                                android:id="@+id/button_user_complains"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/linear_emergency"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/user_login_complains"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_user_security"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_user_complains"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_outlined"
-                                android:paddingTop="@dimen/_15sdp"
-                                android:paddingBottom="@dimen/_15sdp"
-                                android:text="@string/user_login_security"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="@dimen/_16ssp" />
-
-                            <Button
-                                android:id="@+id/button_user_public"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_user_security"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_outlined"
-                                android:paddingTop="@dimen/_15sdp"
-                                android:paddingBottom="@dimen/_15sdp"
-                                android:text="@string/user_login_public"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:textSize="@dimen/_16ssp" />
-
-                            <Button
-                                android:id="@+id/button_report_human_trafficking"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_user_public"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/str_report_human_trafficking"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_report_illicit_drugs"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_report_human_trafficking"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/str_report_illicit_drugs_narcotics"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_report_natural_disasters"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_report_illicit_drugs"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/str_report_natural_disasters"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_report_fire_disasters"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_report_natural_disasters"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/str_report_fire_disasters"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
-
-                            <Button
-                                android:id="@+id/button_report_financial_crimes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/button_report_fire_disasters"
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:layout_marginBottom="@dimen/_20sdp"
-                                android:background="@drawable/user_login_button_bg"
-                                android:text="@string/str_report_financial_economic_crimes"
-                                android:textAllCaps="false"
-                                android:textColor="@android:color/white"
-                                android:textSize="@dimen/_16ssp"
-                                android:visibility="gone" />
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:src="@drawable/ic_baseline_keyboard_arrow_down" />
 
                         </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_emergency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relative_general_complains"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="#80000000"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView_emergency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Anambra Integrated\nSecurity Surveillance\n(ANISS) \nEmergency Phone Lines"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_15ssp" />
+
+                            <TextView
+                                android:id="@+id/textView_emergency1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:text="09017280990"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_18ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView_emergency2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:text="07039896429"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_18ssp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/button_user_complains"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/linear_emergency"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/user_login_complains"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_user_security"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_user_complains"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_outlined"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_15sdp"
+                            android:text="@string/user_login_security"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <Button
+                            android:id="@+id/button_user_public"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_user_security"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_outlined"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_15sdp"
+                            android:text="@string/user_login_public"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <Button
+                            android:id="@+id/button_report_human_trafficking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_user_public"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/str_report_human_trafficking"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_report_illicit_drugs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_report_human_trafficking"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/str_report_illicit_drugs_narcotics"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_report_natural_disasters"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_report_illicit_drugs"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/str_report_natural_disasters"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_report_fire_disasters"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_report_natural_disasters"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/str_report_fire_disasters"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button_report_financial_crimes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/button_report_fire_disasters"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:background="@drawable/user_login_button_bg"
+                            android:text="@string/str_report_financial_economic_crimes"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone" />
+
                     </RelativeLayout>
-                </LinearLayout>
+                </RelativeLayout>
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:itemTextColor="@android:color/white"
-        android:background="#008C00"
         android:layout_gravity="start"
+        android:background="#008C00"
         app:headerLayout="@layout/navigation_header"
+        app:itemTextColor="@android:color/white"
         app:menu="@menu/menu_list" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

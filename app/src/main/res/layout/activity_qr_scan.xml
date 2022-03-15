@@ -31,13 +31,13 @@
         android:id="@+id/textView_qr_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:gravity="center"
         android:textColor="@android:color/holo_orange_light"
         android:textSize="@dimen/_25ssp"
         android:visibility="gone"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintBottom_toTopOf="@+id/textView_qr_registration" />
 
     <TextView

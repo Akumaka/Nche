@@ -87,14 +87,14 @@
         <item>Motorbike</item>
     </string-array>
 
-<!--    <string-array name="complain_type_array">-->
-<!--        <item>General Complains</item>-->
-<!--        <item>Human Trafficking Complains</item>-->
-<!--        <item>Illicit Drugs Complains</item>-->
-<!--        <item>Natural Disasters Complains</item>-->
-<!--        <item>Fire Disasters Complains</item>-->
-<!--        <item>Financial Crimes Complains</item>-->
-<!--    </string-array>-->
+    <!--    <string-array name="complain_type_array">-->
+    <!--        <item>General Complains</item>-->
+    <!--        <item>Human Trafficking Complains</item>-->
+    <!--        <item>Illicit Drugs Complains</item>-->
+    <!--        <item>Natural Disasters Complains</item>-->
+    <!--        <item>Fire Disasters Complains</item>-->
+    <!--        <item>Financial Crimes Complains</item>-->
+    <!--    </string-array>-->
 
     <string-array name="complain_type_array">
         <item>General Complaints</item>
@@ -114,5 +114,54 @@
     <string name="str_report_fire_disasters">Report Fire Disasters</string>
     <string name="str_report_financial_economic_crimes">Report Financial/Economic Crimes</string>
     <string name="str_note">Note: You have the  option of providing your contact email and phone number if you wish to be contacted, or use nchedata@gmail.com and omit your phone number if you wish to report anonymously.</string>
+
+    <string name="str_time">Time</string>
+    <string name="str_reg_no">Reg. No.</string>
+    <string name="str_unique_code">Unique Code</string>
+    <string name="str_model">Model</string>
+    <string name="str_name">Name</string>
+    <string name="str_email">Email</string>
+    <string name="str_remarks">Remarks</string>
+    <string name="str_attachment">Attachment</string>
+
+    <string name="str_user">User</string>
+    <string name="str_id">Id</string>
+    <string name="str_vehicle_type">Vehicle Type</string>
+    <string name="str_vehicle_model">Vehicle Model</string>
+    <string name="str_vehicle_route">Vehicle Route</string>
+    <string name="str_vehicle_operation_unit">Vehicle Operation Unit</string>
+    <string name="str_vehicle_registration_number">Vehicle Registration Number</string>
+    <string name="str_vehicle_engine_number">Vehicle Engine Number</string>
+    <string name="str_vehicle_tracking_number">Vehicle Tracking Number</string>
+    <string name="str_owner_name">Owner Name</string>
+    <string name="str_owner_current_address">Owner Current Address</string>
+    <string name="str_owner_nationality">Owner Nationality</string>
+    <string name="str_owner_state_of_origin">Owner State of Origin</string>
+    <string name="str_owner_local_govt_area">Owner Local Govt Area</string>
+    <string name="str_owner_home_town">Owner Home Town</string>
+    <string name="str_owner_phone_number">Owner Phone Number</string>
+    <string name="str_owner_email">Owner Email</string>
+    <string name="str_driver_name">Driver Name</string>
+    <string name="str_driver_residence_address">Driver Residence Address</string>
+    <string name="str_driver_nationality">Driver Nationality</string>
+    <string name="str_driver_origin">Driver Origin</string>
+    <string name="str_driver_local_govt_area">Driver Local Govt Area</string>
+    <string name="str_driver_home_town">Driver Home Town</string>
+    <string name="str_driver_phone_number">Driver Phone Number</string>
+    <string name="str_driver_email">Driver Email</string>
+
+    <string name="str_add_new_user">Add New User</string>
+    <string name="str_id_">Id:</string>
+    <string name="str_name_">Name:</string>
+    <string name="str_password_">Password:</string>
+    <string name="str_user_type_">User Type:</string>
+    <string name="str_add">Add</string>
+    <string name="str_update">Update</string>
+
+    <string name="str_operators_details">Operator\'s Details</string>
+    <string name="str_vehicle_type_">Vehicle Type :</string>
+    <string name="str_route_">Route :</string>
+    <string name="str_phone_number_of_operator_">Phone Number Of Operator :</string>
+    <string name="str_address_of_operator_">Address Of Operator :</string>
 
 </resources>

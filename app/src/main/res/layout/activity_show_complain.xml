@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,7 @@
         android:background="@drawable/user_login_button_bg"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
-        android:text="Operator\'s Details"
+        android:text="@string/str_operators_details"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_24ssp" />
 
@@ -53,8 +52,10 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
+                android:focusable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/textView_tracking_number"
@@ -72,15 +73,17 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
+                android:focusable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/textView_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Vehicle Type :"
+                android:text="@string/str_vehicle_type_"
                 android:textColor="@color/colorUserTextView"
                 android:textSize="@dimen/_14ssp" />
 
@@ -92,14 +95,15 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/textView_route"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Route :"
+                android:text="@string/str_route_"
                 android:textColor="@color/colorUserTextView"
                 android:textSize="@dimen/_14ssp" />
 
@@ -111,7 +115,8 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/textView_phone"
@@ -119,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:singleLine="true"
-                android:text="Phone Number Of Operator :"
+                android:text="@string/str_phone_number_of_operator_"
                 android:textColor="@color/colorUserTextView"
                 android:textSize="@dimen/_14ssp" />
 
@@ -131,7 +136,8 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <TextView
                 android:id="@+id/textView_address"
@@ -139,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:singleLine="true"
-                android:text="Address Of Operator :"
+                android:text="@string/str_address_of_operator_"
                 android:textColor="@color/colorUserTextView"
                 android:textSize="@dimen/_14ssp" />
 
@@ -151,14 +157,16 @@
                 android:background="@drawable/user_login_edittext_bg"
                 android:editable="false"
                 android:padding="@dimen/_6sdp"
-                android:textSize="@dimen/_18ssp" />
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="Deprecated,LabelFor,TextFields" />
 
             <ImageView
                 android:id="@+id/imageView_driverImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:padding="@dimen/_10sdp" />
+                android:padding="@dimen/_10sdp"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
 

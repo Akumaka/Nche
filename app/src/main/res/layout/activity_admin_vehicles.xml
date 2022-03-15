@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,26 +10,26 @@
         android:id="@+id/layout_view_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/_10sdp"
+        android:layout_below="@id/condition"
         android:layout_margin="@dimen/_30sdp"
         android:background="@drawable/user_login_edittext_bg"
-        android:visibility="gone"
-        android:layout_below="@id/condition"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/image_view_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_cancel_black"
-            android:drawableEnd="@drawable/ic_cancel_black"/>
+            app:drawableEndCompat="@drawable/ic_cancel_black" />
 
         <ImageView
             android:id="@+id/image_view_operator_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/capture_image"
-            android:padding="@dimen/_10sdp"/>
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 
@@ -36,28 +37,28 @@
         android:id="@+id/menu_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentTop="true"
+        android:orientation="horizontal"
         android:weightSum="3">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_title"
-            android:textSize="@dimen/_20ssp"
-            android:textColor="@android:color/white"
-            android:padding="@dimen/_5sdp"
-            android:gravity="center"
             android:layout_weight=".4"
-            android:background="@color/colorUserLoginTitle"/>
+            android:background="@color/colorUserLoginTitle"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/app_title"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp" />
 
         <ImageButton
             android:id="@+id/imageButton_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/_2sdp"
             android:layout_weight="2.6"
             android:background="@color/colorUserLoginTitle"
+            android:padding="@dimen/_2sdp"
             android:src="@drawable/vicab_menu" />
 
     </LinearLayout>
@@ -66,45 +67,45 @@
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_bar_bg"
-        android:textSize="@dimen/_16ssp"
-        android:padding="@dimen/_10sdp"
+        android:layout_below="@id/menu_bar"
         android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/search_bar_bg"
+        android:drawableRight="@drawable/ic_search"
+        android:padding="@dimen/_10sdp"
         android:textColor="@android:color/white"
         android:textCursorDrawable="@drawable/edittext_cursor"
-        android:drawableRight="@drawable/ic_search"
-        android:layout_below="@id/menu_bar"/>
+        android:textSize="@dimen/_16ssp" />
 
     <LinearLayout
         android:id="@+id/condition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/search_view">
+        android:layout_below="@id/search_view"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/checkbox_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
-            android:textSize="@dimen/_16ssp"
-            android:padding="@dimen/_5sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
             android:buttonTint="@color/cardview_dark_background"
-            android:checked="true"/>
+            android:checked="true"
+            android:padding="@dimen/_5sdp"
+            android:text="User"
+            android:textSize="@dimen/_16ssp" />
 
         <CheckBox
             android:id="@+id/checkbox_registration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registration Number"
-            android:textSize="@dimen/_16ssp"
-            android:padding="@dimen/_5sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
             android:buttonTint="@color/cardview_dark_background"
-            android:checked="true"/>
+            android:checked="true"
+            android:padding="@dimen/_5sdp"
+            android:text="Registration Number"
+            android:textSize="@dimen/_16ssp" />
 
     </LinearLayout>
 
@@ -113,17 +114,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/condition"
-        android:fillViewport="true"
-        android:scrollbars="horizontal"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fillViewport="true"
+        android:scrollbars="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,12 +137,12 @@
                     android:layout_width="@dimen/_150sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="User"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="User"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -149,12 +150,12 @@
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Id"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Id"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -162,12 +163,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Type"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Type"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -175,12 +176,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Model"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Model"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -188,12 +189,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Route"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Route"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -201,12 +202,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Operation Unit"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Operation Unit"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -214,25 +215,25 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Registration Number"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Registration Number"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/a_v_engine"
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/_18ssp"
                     android:layout_weight="1"
-                    android:text="Vehicle Engine Number"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Engine Number"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -240,12 +241,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Vehicle Tracking Number"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Vehicle Tracking Number"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -253,12 +254,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Name"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Name"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -266,12 +267,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Current Address"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Current Address"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -279,12 +280,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Nationality"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Nationality"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
 
@@ -293,12 +294,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner State of Origin"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner State of Origin"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -306,12 +307,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Local Govt Area"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Local Govt Area"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -319,12 +320,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Home Town"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Home Town"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
 
@@ -333,12 +334,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Phone Number"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Phone Number"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -346,12 +347,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Owner Email"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Owner Email"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -359,12 +360,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Name"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Name"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -372,12 +373,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Residence Address"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Residence Address"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -385,12 +386,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Nationality"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Nationality"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -398,12 +399,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Origin"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Origin"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -411,12 +412,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Local Govt Area"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Local Govt Area"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -424,12 +425,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Home Town"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Home Town"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -437,12 +438,12 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Phone Number"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Phone Number"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -450,26 +451,26 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Email"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Email"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/a_d_image"
                     android:layout_width="@dimen/_140sdp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/_18ssp"
-                    android:text="Driver Image"
-                    android:padding="@dimen/_3sdp"
-                    android:gravity="left"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:background="@drawable/recycler_view_headers_borders"
+                    android:gravity="left"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Driver Image"
                     android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -481,7 +482,5 @@
                 android:scrollbars="vertical" />
 
         </LinearLayout>
-
     </HorizontalScrollView>
-
 </RelativeLayout>

@@ -33,7 +33,8 @@
             android:padding="@dimen/_6sdp"
             android:textColor="@android:color/white"
             android:textCursorDrawable="@drawable/edittext_cursor"
-            android:textSize="@dimen/_16ssp" />
+            android:textSize="@dimen/_16ssp"
+            tools:ignore="LabelFor,TextFields" />
 
     </LinearLayout>
 
@@ -59,7 +60,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Time"
+                    android:text="@string/str_time"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -72,7 +73,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Reg. No."
+                    android:text="@string/str_reg_no"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -85,7 +86,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Unique Code"
+                    android:text="@string/str_unique_code"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -98,7 +99,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Model"
+                    android:text="@string/str_model"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -111,7 +112,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Name"
+                    android:text="@string/str_name"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -124,7 +125,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Email"
+                    android:text="@string/str_email"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -150,7 +151,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Remarks"
+                    android:text="@string/str_remarks"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -163,7 +164,7 @@
                     android:background="@drawable/recycler_view_headers_borders"
                     android:gravity="start"
                     android:padding="@dimen/_3sdp"
-                    android:text="Attachment"
+                    android:text="@string/str_attachment"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
@@ -177,7 +178,6 @@
                 android:scrollbars="vertical" />
 
         </LinearLayout>
-
     </HorizontalScrollView>
 
 </LinearLayout>
